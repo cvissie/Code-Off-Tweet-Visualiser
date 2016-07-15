@@ -287,14 +287,13 @@
       ctx.textBaseline = "top";
       drawText(ctx, 90, 5, avatarName, "left");
 
-      ctx.font = "22px " + Constants.FONT;
+      ctx.font = "18px " + Constants.FONT;
       drawText(ctx, 90, 30, avatarHandle, "left");
 
       ctx.font = "18px " + Constants.FONT;
       drawText(ctx, 90, 65, timePosted, "left");
 
       ctx.font = "22px " + Constants.FONT;
-
       drawTweet(ctx, textDrawInstructions);
 
       if (mediaData) {

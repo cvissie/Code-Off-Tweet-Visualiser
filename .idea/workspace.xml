@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91dfab00-5a3a-4031-897a-d3de21366f79" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/concept/blue_post_it.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/concept/light-yellow-post-it-note-md.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/concept/sky.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/concept/sticky-note.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/museosans-500.otf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Intro.js" afterPath="$PROJECT_DIR$/js/Intro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ScreenClouds.js" afterPath="$PROJECT_DIR$/js/ScreenClouds.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ScreenLoader.js" afterPath="$PROJECT_DIR$/js/ScreenLoader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/TwitterPostFetcher.js" afterPath="$PROJECT_DIR$/js/TwitterPostFetcher.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="Code-Off-Tweet-Visualiser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,7 +83,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScreenClouds.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ScreenClouds.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ScreenClouds.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -103,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TwitterPostFetcher.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TwitterPostFetcher.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/TwitterPostFetcher.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="290" column="26" selection-start-line="290" selection-start-column="26" selection-end-line="290" selection-end-column="26" />
+            <state relative-caret-position="493">
+              <caret line="295" column="42" selection-start-line="295" selection-start-column="42" selection-end-line="295" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -159,9 +149,9 @@
         <option value="$PROJECT_DIR$/js/Intro.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/TwitterPostFetcher.js" />
         <option value="$PROJECT_DIR$/js/ScreenLoader.js" />
         <option value="$PROJECT_DIR$/js/ScreenClouds.js" />
+        <option value="$PROJECT_DIR$/js/TwitterPostFetcher.js" />
       </list>
     </option>
   </component>
@@ -389,12 +379,12 @@
       <workItem from="1468479656753" duration="10977000" />
       <workItem from="1468500808422" duration="24000" />
       <workItem from="1468508456054" duration="28681000" />
-      <workItem from="1468601895074" duration="2763000" />
+      <workItem from="1468601895074" duration="3135000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42445000" />
+    <option name="totallyTimeSpent" value="42817000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -591,14 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/TwitterPostFetcher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="290" column="26" selection-start-line="290" selection-start-column="26" selection-end-line="290" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/Intro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -619,6 +601,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/TwitterPostFetcher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="295" column="42" selection-start-line="295" selection-start-column="42" selection-end-line="295" selection-end-column="42" />
           <folding />
         </state>
       </provider>
