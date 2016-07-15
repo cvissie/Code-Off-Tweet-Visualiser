@@ -1,5 +1,7 @@
 ![Code Off](http://www.prolificidea.com/assets/img/code_off-logo.png "Code Off")
 
+# Entry by Christiaan Visser
+
 # Code Off - JSinSA Tweet Visualiser
 This code off challenges all attendees of the 2016 [JS in SA conference](http://jsinsa.com) to use their creativity to make a tweet visualiser. Your visualiser may be statistical, filled with wacky animations, or even three dimensional. It's all up to you!
 This repository contains boilerplate code to fetch tweets with the @JSinSA handle and #JSinSA hashtags - so that part is done.
