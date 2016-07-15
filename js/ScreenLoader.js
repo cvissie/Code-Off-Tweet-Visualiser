@@ -6,6 +6,7 @@
     var _view;
     var _text;
 
+    var _fontsLoaded = false;
     var _soundsLoaded = false;
     var _imagesProgress = 0;
 
@@ -15,12 +16,12 @@
       _view = new PIXI.Container();
       stage.addChild(_view);
 
-      _text = new PIXI.Text("", {font: "22px Calibri", fill: 0xffffff});
+      _text = new PIXI.Text("", {font: "22px sans-serif", fill: 0xffffff, align: "center"});
       _text.anchor.set(0.5, 0.5);
       _text.position.set(1024 / 2, 768 / 2);
       _view.addChild(_text);
 
-      TweenMax.delayedCall(5, setSoundsLoaded);
+      TweenMax.delayedCall(10, setNonCriticalLoaded);
     };
 
     self.hide = function () {
@@ -32,8 +33,9 @@
       });
     };
 
-    function setSoundsLoaded() {
+    function setNonCriticalLoaded() {
       self.soundsLoaded = true;
+      self.fontsLoaded = true;
     }
 
     function updateText() {
@@ -50,12 +52,23 @@
       }
 
       if (_imagesProgress != 100) {
-        text += "images loading... " + _imagesProgress.toFixed(2) + "%\n";
+        text += "images loading... " + _imagesProgress.toPrecision(2) + "%\n";
         ready = false;
       }
       else {
         text += "images loaded.\n";
       }
+
+      if (_fontsLoaded) {
+        text += "fonts loaded.\n";
+      }
+      else {
+        text += "fonts loading...\n";
+        ready = false;
+      }
+
+      text += "\n";
+      text += "the visualizer will start after 10 secs if non-critical files failed to load";
 
       text = text.trim();
 
@@ -79,6 +92,12 @@
       assetsProgress: {
         set: function (value) {
           _imagesProgress = value;
+          updateText();
+        }
+      },
+      fontsLoaded: {
+        set: function (value) {
+          _fontsLoaded = value;
           updateText();
         }
       }

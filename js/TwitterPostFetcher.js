@@ -274,7 +274,7 @@
 
       var ctx = canvas.getContext("2d");
 
-      ctx.font = "22px Calibri";
+      ctx.font = "22px " + Constants.FONT;
       var textDrawInstructions = getTextDrawInstructions(ctx, 0, 90, messageData, 390);
 
       canvas.width = 400;
@@ -282,18 +282,18 @@
 
       ctx.drawImage(avatarImg, 5, 5, 80, 80);
 
-      ctx.font = "bold 22px Calibri";
+      ctx.font = "bold 22px " + Constants.FONT;
       ctx.fillStyle = "#000";
       ctx.textBaseline = "top";
-      var x1 = drawText(ctx, 90, 15, avatarName, "left");
+      drawText(ctx, 90, 5, avatarName, "left");
 
-      ctx.font = "22px Calibri";
-      drawText(ctx, x1 + 5, 15, avatarHandle, "left");
+      ctx.font = "22px " + Constants.FONT;
+      drawText(ctx, 90, 30, avatarHandle, "left");
 
-      ctx.font = "18px Calibri";
-      drawText(ctx, 90, 45, timePosted, "left");
+      ctx.font = "18px " + Constants.FONT;
+      drawText(ctx, 90, 65, timePosted, "left");
 
-      ctx.font = "22px Calibri";
+      ctx.font = "22px " + Constants.FONT;
 
       drawTweet(ctx, textDrawInstructions);
 

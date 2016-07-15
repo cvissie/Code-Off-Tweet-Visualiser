@@ -1,0 +1,7 @@
+(function () {
+
+  Game.WebFontLoader = function () {
+
+  };
+
+})();

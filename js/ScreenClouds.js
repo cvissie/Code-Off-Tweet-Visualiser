@@ -14,8 +14,6 @@
     var _tweet = null;
     var _text;
 
-    // var _textSegments = ["Do", " you", " wonder", " what", " the", "\ntwittersphere", " looks", " like", "\n@jsinsa?"];
-
     var _randomHelper = {};
     _randomHelper.random = function (a, b) {
       return Math.random() * (b - a) + a;
@@ -33,10 +31,10 @@
 
       showText();
 
-      var tl = new TimelineLite({delay: 1.0});
-      tl.to(_container, 5.0, {alpha: 1}, 0);
+      var tl = new TimelineLite({delay: 1.5});
+      tl.to(_container, 5.0, {alpha: 1, ease: Quad.easeIn}, 0);
       tl.to(_container, 10.0, {y: 0}, 0);
-      tl.call(myTwitterPostFetcher.fetch, null, null, 9.0);
+      tl.call(myTwitterPostFetcher.fetch, null, null, 8.0);
     };
 
     function showText() {
@@ -46,7 +44,7 @@
 
       var duration = 2.0;
 
-      var fullText = "Do you wonder what the \ntwittersphere looks like @jsinsa?";
+      var fullText = "do you wonder what the \ntwittersphere looks like @jsinsa?";
 
       TweenMax.to(context, duration, {
         t: fullText.length,
@@ -65,8 +63,8 @@
             alpha: 0
           });
           tl.call(function () {
-            _text.style = {font: "50px Calibri", fill: "#000", align: "center"};
-            _text.text = "Now would be a good time to start tweeting :)";
+            _text.style = {font: "50px " + Constants.FONT, fill: "#000", align: "center"};
+            _text.text = "now would be a good time to start tweeting :)";
           });
           tl.to(_text, 1.0, {alpha: 1});
           tl.to(_text, 1.0, {delay: 1, alpha: 0});
@@ -94,7 +92,7 @@
             var textureToDestroy = e.texture;
             e.texture = loader.resources["skyCloud" + _randomHelper.randomInt(1, 2)].texture;
             e.isTweet = false;
-            textureToDestroy.destroy();
+            textureToDestroy.destroy(true);
           }
 
           e.scaleRatio = 5;
@@ -148,7 +146,7 @@
       _container.visible = false;
       stage.addChild(_container);
 
-      _text = new PIXI.Text("", {font: "50px Calibri", fill: "#ffffff", align: "center"});
+      _text = new PIXI.Text("", {font: "50px " + Constants.FONT, fill: "#ffffff", align: "center"});
       _text.anchor.set(0.5, 0.5);
       _text.position.set(1024 / 2, 768 / 2);
       stage.addChild(_text);

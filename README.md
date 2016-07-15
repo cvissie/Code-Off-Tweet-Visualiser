@@ -1,6 +1,9 @@
-![Code Off](http://www.prolificidea.com/assets/img/code_off-logo.png "Code Off")
+# Entry
+Author: Christiaan Visser
+How to Run: ![RawGit](https://rawgit.com/cvissie/Code-Off-Tweet-Visualiser/master/index.html)
 
-# Entry by Christiaan Visser
+
+![Code Off](http://www.prolificidea.com/assets/img/code_off-logo.png "Code Off")
 
 # Code Off - JSinSA Tweet Visualiser
 This code off challenges all attendees of the 2016 [JS in SA conference](http://jsinsa.com) to use their creativity to make a tweet visualiser. Your visualiser may be statistical, filled with wacky animations, or even three dimensional. It's all up to you!

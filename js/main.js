@@ -9,6 +9,8 @@ var renderer = new PIXI.WebGLRenderer(1400, 768, {view: document.getElementById(
 var stage = new PIXI.Container();
 stage.position.set(188, 0);
 
+// ------------------------------------ Assets
+
 var loaderOptions = {crossOrigin:true};
 
 var loader = new PIXI.loaders.Loader();
@@ -17,6 +19,8 @@ loader.add("skyCloud2", "assets/skyCloud2.png", loaderOptions);
 loader.add("skyBG", "assets/skyBG.jpg", loaderOptions);
 loader.on("progress", onLoaderProgress);
 loader.load();
+
+// ------------------------------------ Sound
 
 var sound = new Howl({
   src: ["sounds/music2.mp3"],
@@ -27,6 +31,27 @@ var sound = new Howl({
 
 sound.once("load", onSoundLoaded);
 sound.load();
+
+// ------------------------------------ WebFont
+
+WebFont.load({
+  classes: false,
+  events: true,
+  timeout: 15000,
+  custom: {
+    families: ["MuseoSans-500"],
+    urls: ["fonts/MuseoSans-500.css"]
+  },
+  loading: function () {
+    // do nothing
+  },
+  fontactive: function (familyName) {
+    if (familyName == "MuseoSans-500") {
+      onFontLoaded();
+    }
+  }
+});
+
 
 var screenLoader = new Game.ScreenLoader(stage);
 screenLoader.onReady = onLoaderComplete;
@@ -43,8 +68,10 @@ animate(performance.now());
 
 function onSoundLoaded() {
   screenLoader.soundsLoaded = true;
-  sound.play();
-  sound.fade(0, 0.5, 2.0);
+}
+
+function onFontLoaded() {
+  screenLoader.fontsLoaded = true;
 }
 
 function onLoaderProgress(loader) {
@@ -52,6 +79,9 @@ function onLoaderProgress(loader) {
 }
 
 function onLoaderComplete() {
+  sound.play();
+  sound.fade(0, 0.5, 2.0);
+
   screenLoader.hide();
 
   TweenMax.delayedCall(2, function () {
