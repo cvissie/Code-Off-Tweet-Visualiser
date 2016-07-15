@@ -1,12 +1,32 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="css/styles.css">
-        <script src="js/TwitterPostFetcher.js"></script>
-    </head>
-    <body>
-        <h2>JS in SA Tweet Visualiser</h2>
-        <div id="jsinsa_profile"></div>
-        <div id="jsinsa_posts"></div>
-        <a href="http://codepen.io/jasonmayes/pen/Ioype">Thanks to Jason Mayes for his awesome twitter scraping library</a>
-    </body>
+<head>
+  <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<canvas id="myCanvas"></canvas>
+
+<script src="libs/pixi.min.js"></script>
+<script src="libs/TweenMax.min.js"></script>
+<script src="libs/howler.min.js"></script>
+<script src="libs/twitterFetcher_min.js"></script>
+
+<script src="js/Intro.js"></script>
+<script src="js/Mini3D.js"></script>
+<script src="js/Cloud.js"></script>
+<script src="js/ScreenLoader.js"></script>
+<script src="js/ScreenClouds.js"></script>
+<script src="js/TwitterPostFetcher.js"></script>
+<script src="js/main.js"></script>
+
+</body>
 </html>
