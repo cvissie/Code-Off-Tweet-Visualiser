@@ -92,7 +92,7 @@
           if (e.isTweet) {
             _hasTweetOnScreen = false;
             var textureToDestroy = e.texture;
-            e.texture = PIXI.Texture.EMPTY;
+            e.texture = loader.resources["skyCloud" + _randomHelper.randomInt(1, 2)].texture;
             e.isTweet = false;
             textureToDestroy.destroy();
           }
@@ -132,10 +132,6 @@
             else if (_tweet.error) {
               _tweet = null;
             }
-          }
-
-          if (!isTweet && e.isTweet) {
-            e.texture = loader.resources["skyCloud" + _randomHelper.randomInt(1, 2)].texture;
           }
         }
       }
