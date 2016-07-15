@@ -5,7 +5,7 @@
 
     var _container;
     var _range = 5000;
-    var _speed = -10;
+    var _speed = -15;
     var _clouds = [];
     var _bg;
     var _mini3d;
@@ -36,7 +36,7 @@
       var tl = new TimelineLite({delay: 1.0});
       tl.to(_container, 5.0, {alpha: 1}, 0);
       tl.to(_container, 10.0, {y: 0}, 0);
-      tl.call(myTwitterPostFetcher.fetch, null, null, 7.0);
+      tl.call(myTwitterPostFetcher.fetch, null, null, 9.0);
     };
 
     function showText() {
@@ -44,7 +44,7 @@
       context.t = 0;
       context.j = 0;
 
-      var duration = 3.0;
+      var duration = 2.0;
 
       var fullText = "Do you wonder what the \ntwittersphere looks like @jsinsa?";
 
@@ -59,10 +59,17 @@
           context.j = j;
         },
         onComplete: function () {
-          TweenMax.to(_text, 2.0, {
+          var tl = new TimelineLite();
+          tl.to(_text, 1.0, {
             delay: 3,
             alpha: 0
           });
+          tl.call(function () {
+            _text.style = {font: "50px Calibri", fill: "#000", align: "center"};
+            _text.text = "Now would be a good time to start tweeting :)";
+          });
+          tl.to(_text, 1.0, {alpha: 1});
+          tl.to(_text, 1.0, {delay: 1, alpha: 0});
         }
       });
     }
