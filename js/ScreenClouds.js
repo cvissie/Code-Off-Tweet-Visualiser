@@ -14,7 +14,7 @@
     var _tweet = null;
     var _text;
 
-    var _textSegments = ["Do", " you", " wonder", " what", " the", "\ntwittersphere", " looks", " like", "\n@jsinsa?"];
+    // var _textSegments = ["Do", " you", " wonder", " what", " the", "\ntwittersphere", " looks", " like", "\n@jsinsa?"];
 
     var _randomHelper = {};
     _randomHelper.random = function (a, b) {
@@ -42,19 +42,21 @@
     function showText() {
       var context = {};
       context.t = 0;
+      context.j = 0;
 
-      var duration = 2.0;
+      var duration = 3.0;
+
+      var fullText = "Do you wonder what the \ntwittersphere looks like @jsinsa?";
 
       TweenMax.to(context, duration, {
-        t: _textSegments.length,
+        t: fullText.length,
+        ease: Linear.easeOut,
         onUpdate: function () {
-          var text = "";
-          var t = Math.round(context.t);
-          for (var i = 0; i != t; ++i) {
-            text += _textSegments[i];
+          var j = Math.round(context.t);
+          if (j != context.j) {
+            _text.text = fullText.substring(0, j);
           }
-
-          _text.text = text;
+          context.j = j;
         },
         onComplete: function () {
           TweenMax.to(_text, 2.0, {
