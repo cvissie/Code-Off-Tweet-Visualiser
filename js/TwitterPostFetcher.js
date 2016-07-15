@@ -60,7 +60,14 @@
       ret.texture = null;
       ret.ready = false;
       ret.tweet = tweet;
-      parseTweet(ret);
+      try
+      {
+        parseTweet(ret);
+      }
+      catch (err)
+      {
+        ret.error = true;
+      }
       return ret;
     };
 
