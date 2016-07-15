@@ -1,6 +1,7 @@
 # Entry
-Author: Christiaan Visser
-How to Run: ![RawGit](https://rawgit.com/cvissie/Code-Off-Tweet-Visualiser/master/index.html)
+By Christiaan Visser
+
+Run with [RawGit](https://rawgit.com/cvissie/Code-Off-Tweet-Visualiser/master/index.html)
 
 
 ![Code Off](http://www.prolificidea.com/assets/img/code_off-logo.png "Code Off")
