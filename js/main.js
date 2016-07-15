@@ -9,10 +9,12 @@ var renderer = new PIXI.WebGLRenderer(1400, 768, {view: document.getElementById(
 var stage = new PIXI.Container();
 stage.position.set(188, 0);
 
+var loaderOptions = {crossOrigin:true};
+
 var loader = new PIXI.loaders.Loader();
-loader.add("skyCloud1", "assets/skyCloud1.png");
-loader.add("skyCloud2", "assets/skyCloud2.png");
-loader.add("skyBG", "assets/skyBG.jpg");
+loader.add("skyCloud1", "assets/skyCloud1.png", loaderOptions);
+loader.add("skyCloud2", "assets/skyCloud2.png", loaderOptions);
+loader.add("skyBG", "assets/skyBG.jpg", loaderOptions);
 loader.on("progress", onLoaderProgress);
 loader.load();
 
