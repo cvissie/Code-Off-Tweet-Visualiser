@@ -1,7 +1,9 @@
 # Entry
 By Christiaan Visser
 
-Run with [RawGit](https://rawgit.com/cvissie/Code-Off-Tweet-Visualiser/master/index.html)
+Run with [RawGit development](https://rawgit.com/cvissie/Code-Off-Tweet-Visualiser/master/index.html)
+
+Or [RawGit development](https://cdn.rawgit.com/cvissie/Code-Off-Tweet-Visualiser/1.2/index.html)
 
 
 ![Code Off](http://www.prolificidea.com/assets/img/code_off-logo.png "Code Off")
