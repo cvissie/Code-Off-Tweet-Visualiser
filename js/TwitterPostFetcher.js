@@ -1,5 +1,6 @@
 (function () {
 
+  var errImg = null;
   var tweetList = {};
   var isFirstFetch = true;
 
@@ -23,6 +24,10 @@
     var _oldPostIndex = 0;
 
     self.fetch = function () {
+      errImg = new Image();
+      errImg.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNFRUE5QTQwNEIzNjExRTZBRjJBRjY0REU0MzdBRTdCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNFRUE5QTQxNEIzNjExRTZBRjJBRjY0REU0MzdBRTdCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M0VFQTlBM0U0QjM2MTFFNkFGMkFGNjRERTQzN0FFN0IiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6M0VFQTlBM0Y0QjM2MTFFNkFGMkFGNjRERTQzN0FFN0IiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5vz6iBAAABgFBMVEXk5OTO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";
+      errImg.onload = ready;
+
       reallyFetch();
       setInterval(reallyFetch, 5000);
     };
@@ -60,16 +65,18 @@
       ret.texture = null;
       ret.ready = false;
       ret.tweet = tweet;
-      try
-      {
+      try {
         parseTweet(ret);
       }
-      catch (err)
-      {
+      catch (err) {
         ret.error = true;
       }
       return ret;
     };
+
+    function ready() {
+      errImg.onload = null;
+    }
 
     function reallyFetch() {
       twitterFetcher.fetch(configProfile);
@@ -96,7 +103,7 @@
     var _ready = false;
     var _completeCalled = false;
 
-    self.addImgTag = function (url) {
+    self.addImgTag = function (url, error) {
       _count++;
 
       var source = new Image();
@@ -112,6 +119,10 @@
       };
       source.onerror = function () {
         cleanup();
+        if (error) {
+          error();
+        }
+        onResourceComplete();
       };
 
       function cleanup() {
@@ -268,8 +279,12 @@
     var mediaData = parseTweetMedia(tweetDiv.querySelector("div.media > img"), loadContext);
 
     // add any other images to load to the context
-    var avatarImg = loadContext.addImgTag(avatarImgUrl);
+    var avatarImg = loadContext.addImgTag(avatarImgUrl, onAvatarFail);
     loadContext.ready();
+
+    function onAvatarFail() {
+      avatarImg = errImg;
+    }
 
     function onComplete() {
       // console.log("drawing!!");
@@ -537,10 +552,16 @@
       return null;
     }
 
-    return {
-      img: loadContext.addImgTag(url),
+    var ret = {
+      img: loadContext.addImgTag(url, error),
       url: url
     };
+
+    function error() {
+      ret.img = errImg;
+    }
+
+    return ret;
   }
 
 })();

@@ -11,13 +11,14 @@ stage.position.set(188, 0);
 
 // ------------------------------------ Assets
 
-var loaderOptions = {crossOrigin:true};
+var loaderOptions = {crossOrigin: true};
 
 var loader = new PIXI.loaders.Loader();
 loader.add("skyCloud1", "assets/skyCloud1.png", loaderOptions);
 loader.add("skyCloud2", "assets/skyCloud2.png", loaderOptions);
 loader.add("skyBG", "assets/skyBG.jpg", loaderOptions);
 loader.on("progress", onLoaderProgress);
+loader.once("error", onLoaderError);
 loader.load();
 
 // ------------------------------------ Sound
@@ -72,6 +73,10 @@ function onSoundLoaded() {
 
 function onFontLoaded() {
   screenLoader.fontsLoaded = true;
+}
+
+function onLoaderError() {
+  screenLoader.imageError = true;
 }
 
 function onLoaderProgress(loader) {

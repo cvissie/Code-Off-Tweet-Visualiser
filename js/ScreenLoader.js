@@ -9,6 +9,7 @@
     var _fontsLoaded = false;
     var _soundsLoaded = false;
     var _imagesProgress = 0;
+    var _imagesError = false;
 
     self.onReady = null;
 
@@ -40,6 +41,11 @@
 
     function updateText() {
       var text = "";
+
+      if (_imagesError) {
+        _text.text = "images failed to load. refresh please.";
+        return;
+      }
 
       var ready = true;
 
@@ -98,6 +104,12 @@
       fontsLoaded: {
         set: function (value) {
           _fontsLoaded = value;
+          updateText();
+        }
+      },
+      imageError: {
+        set: function (value) {
+          _imagesError = value;
           updateText();
         }
       }

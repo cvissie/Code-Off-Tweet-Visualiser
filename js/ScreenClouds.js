@@ -13,6 +13,7 @@
     var _hasTweetOnScreen = false;
     var _tweet = null;
     var _text;
+    var _name;
 
     var _randomHelper = {};
     _randomHelper.random = function (a, b) {
@@ -34,6 +35,7 @@
       var tl = new TimelineLite({delay: 1.5});
       tl.to(_container, 5.0, {alpha: 1, ease: Quad.easeIn}, 0);
       tl.to(_container, 10.0, {y: 0}, 0);
+      tl.to(_name, 1.0, {alpha: 1}, 4.5);
       tl.call(myTwitterPostFetcher.fetch, null, null, 8.0);
     };
 
@@ -67,7 +69,7 @@
             _text.text = "now would be a good time to start tweeting :)";
           });
           tl.to(_text, 1.0, {alpha: 1});
-          tl.to(_text, 1.0, {delay: 1, alpha: 0});
+          tl.to(_text, 1.0, {delay: 2, alpha: 0});
         }
       });
     }
@@ -150,6 +152,12 @@
       _text.anchor.set(0.5, 0.5);
       _text.position.set(1024 / 2, 768 / 2);
       stage.addChild(_text);
+
+      _name = new PIXI.Text("Entry by Christiaan Visser", {font: "20px " + Constants.FONT, fill: "#ffffff"});
+      _name.anchor.set(0.5, 0);
+      _name.position.set(1024 / 2, 5);
+      _name.alpha = 0;
+      stage.addChild(_name);
 
       _bg = new PIXI.Sprite(loader.resources["skyBG"].texture);
       _bg.position.set(-188, -768);
