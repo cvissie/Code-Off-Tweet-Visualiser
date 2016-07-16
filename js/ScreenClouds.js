@@ -5,7 +5,7 @@
 
     var _container;
     var _range = 5000;
-    var _speed = -15;
+    var _speed = -20;
     var _clouds = [];
     var _bg;
     var _mini3d;

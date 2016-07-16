@@ -359,11 +359,13 @@
   function getTextDrawInstructions(ctx, x, y, data, maxWidth) {
     var ox = x;
     var totalWidth = 0;
+    var oy = y;
 
     var ret = {};
     ret.list = [];
 
     var space = ctx.measureText(" ").width;
+    var allText = "";
 
     var lineHeight = 25;
     for (var i = 0; i < data.length; ++i) {
@@ -412,6 +414,7 @@
             if (word.length <= 0) {
               continue;
             }
+            allText += word;
             var testWidth = ctx.measureText(word).width;
             if (testWidth + x > maxWidth && x != ox) {
               x = ox;
@@ -435,7 +438,10 @@
       }
     }
 
-    ret.y = y + lineHeight;
+    allText = allText.trim();
+    var noText = allText.length <= 0;
+
+    ret.y = noText ? oy : y + lineHeight;
     ret.x = totalWidth;
     return ret;
   }
