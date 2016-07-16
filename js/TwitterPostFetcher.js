@@ -284,8 +284,8 @@
       ctx.font = "22px " + Constants.FONT;
       var textDrawInstructions = getTextDrawInstructions(ctx, 0, 90, messageData, 390);
 
-      canvas.width = 400;
-      canvas.height = mediaData ? textDrawInstructions.y + 210 : textDrawInstructions.y;
+      canvas.width = Math.max(400, textDrawInstructions.x);
+      canvas.height = mediaData ? textDrawInstructions.y + 210 : textDrawInstructions.y + 10;
 
       ctx.drawImage(avatarImg, 5, 5, 80, 80);
 
@@ -343,6 +343,7 @@
    */
   function getTextDrawInstructions(ctx, x, y, data, maxWidth) {
     var ox = x;
+    var totalWidth = 0;
 
     var ret = {};
     ret.list = [];
@@ -408,6 +409,7 @@
               fillStyle: fillStyle,
               type: "text"
             });
+            totalWidth = Math.max(totalWidth, x + testWidth);
             x = x + space + testWidth;
           }
           if (j != lines.length - 1) {
@@ -419,6 +421,7 @@
     }
 
     ret.y = y + lineHeight;
+    ret.x = totalWidth;
     return ret;
   }
 
