@@ -3,7 +3,7 @@ By Christiaan Visser
 
 Run with [RawGit development](https://rawgit.com/cvissie/Code-Off-Tweet-Visualiser/master/index.html)
 
-Or [RawGit production](https://cdn.rawgit.com/cvissie/Code-Off-Tweet-Visualiser/1.3/index.html)
+Or [RawGit production](https://cdn.rawgit.com/cvissie/Code-Off-Tweet-Visualiser/1.4/index.html)
 
 
 ![Code Off](http://www.prolificidea.com/assets/img/code_off-logo.png "Code Off")
